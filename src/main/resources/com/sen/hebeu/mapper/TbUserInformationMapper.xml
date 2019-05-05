@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sen.hebeu.mapper.TbUserInformationMapper" >
+  <resultMap id="BaseResultMap" type="com.sen.hebeu.pojo.TbUserInformation" >
+    <id column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="
+nick_name" property="
+nickName" jdbcType="VARCHAR" />
+    <result column="academy_id" property="academyId" jdbcType="INTEGER" />
+    <result column="profession_id" property="professionId" jdbcType="INTEGER" />
+    <result column="grade" property="grade" jdbcType="VARCHAR" />
+    <result column="enrollment_year" property="enrollmentYear" jdbcType="INTEGER" />
+    <result column="score" property="score" jdbcType="INTEGER" />
+    <result column="experience" property="experience" jdbcType="INTEGER" />
+    <result column="label" property="label" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    user_id, 
+nick_name, academy_id, profession_id, grade, enrollment_year, score, experience, 
+    label
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.sen.hebeu.pojo.TbUserInformationExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tb_user_information
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from tb_user_information
+    where user_id = #{userId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tb_user_information
+    where user_id = #{userId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.sen.hebeu.pojo.TbUserInformationExample" >
+    delete from tb_user_information
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.sen.hebeu.pojo.TbUserInformation" >
+    insert into tb_user_information (user_id, 
+nick_name, academy_id, 
+      profession_id, grade, enrollment_year, 
+      score, experience, label
+      )
+    values (#{userId,jdbcType=INTEGER}, #{
+nickName,jdbcType=VARCHAR}, #{academyId,jdbcType=INTEGER}, 
+      #{professionId,jdbcType=INTEGER}, #{grade,jdbcType=VARCHAR}, #{enrollmentYear,jdbcType=INTEGER}, 
+      #{score,jdbcType=INTEGER}, #{experience,jdbcType=INTEGER}, #{label,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.sen.hebeu.pojo.TbUserInformation" >
+    insert into tb_user_information
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="
+nickName != null" >
+        
+nick_name,
+      </if>
+      <if test="academyId != null" >
+        academy_id,
+      </if>
+      <if test="professionId != null" >
+        profession_id,
+      </if>
+      <if test="grade != null" >
+        grade,
+      </if>
+      <if test="enrollmentYear != null" >
+        enrollment_year,
+      </if>
+      <if test="score != null" >
+        score,
+      </if>
+      <if test="experience != null" >
+        experience,
+      </if>
+      <if test="label != null" >
+        label,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="
+nickName != null" >
+        #{
+nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="academyId != null" >
+        #{academyId,jdbcType=INTEGER},
+      </if>
+      <if test="professionId != null" >
+        #{professionId,jdbcType=INTEGER},
+      </if>
+      <if test="grade != null" >
+        #{grade,jdbcType=VARCHAR},
+      </if>
+      <if test="enrollmentYear != null" >
+        #{enrollmentYear,jdbcType=INTEGER},
+      </if>
+      <if test="score != null" >
+        #{score,jdbcType=INTEGER},
+      </if>
+      <if test="experience != null" >
+        #{experience,jdbcType=INTEGER},
+      </if>
+      <if test="label != null" >
+        #{label,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.sen.hebeu.pojo.TbUserInformationExample" resultType="java.lang.Integer" >
+    select count(*) from tb_user_information
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tb_user_information
+    <set >
+      <if test="record.userId != null" >
+        user_id = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.
+nickName != null" >
+        
+nick_name = #{record.
+nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.academyId != null" >
+        academy_id = #{record.academyId,jdbcType=INTEGER},
+      </if>
+      <if test="record.professionId != null" >
+        profession_id = #{record.professionId,jdbcType=INTEGER},
+      </if>
+      <if test="record.grade != null" >
+        grade = #{record.grade,jdbcType=VARCHAR},
+      </if>
+      <if test="record.enrollmentYear != null" >
+        enrollment_year = #{record.enrollmentYear,jdbcType=INTEGER},
+      </if>
+      <if test="record.score != null" >
+        score = #{record.score,jdbcType=INTEGER},
+      </if>
+      <if test="record.experience != null" >
+        experience = #{record.experience,jdbcType=INTEGER},
+      </if>
+      <if test="record.label != null" >
+        label = #{record.label,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tb_user_information
+    set user_id = #{record.userId,jdbcType=INTEGER},
+      
+nick_name = #{record.
+nickName,jdbcType=VARCHAR},
+      academy_id = #{record.academyId,jdbcType=INTEGER},
+      profession_id = #{record.professionId,jdbcType=INTEGER},
+      grade = #{record.grade,jdbcType=VARCHAR},
+      enrollment_year = #{record.enrollmentYear,jdbcType=INTEGER},
+      score = #{record.score,jdbcType=INTEGER},
+      experience = #{record.experience,jdbcType=INTEGER},
+      label = #{record.label,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sen.hebeu.pojo.TbUserInformation" >
+    update tb_user_information
+    <set >
+      <if test="
+nickName != null" >
+        
+nick_name = #{
+nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="academyId != null" >
+        academy_id = #{academyId,jdbcType=INTEGER},
+      </if>
+      <if test="professionId != null" >
+        profession_id = #{professionId,jdbcType=INTEGER},
+      </if>
+      <if test="grade != null" >
+        grade = #{grade,jdbcType=VARCHAR},
+      </if>
+      <if test="enrollmentYear != null" >
+        enrollment_year = #{enrollmentYear,jdbcType=INTEGER},
+      </if>
+      <if test="score != null" >
+        score = #{score,jdbcType=INTEGER},
+      </if>
+      <if test="experience != null" >
+        experience = #{experience,jdbcType=INTEGER},
+      </if>
+      <if test="label != null" >
+        label = #{label,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sen.hebeu.pojo.TbUserInformation" >
+    update tb_user_information
+    set 
+nick_name = #{
+nickName,jdbcType=VARCHAR},
+      academy_id = #{academyId,jdbcType=INTEGER},
+      profession_id = #{professionId,jdbcType=INTEGER},
+      grade = #{grade,jdbcType=VARCHAR},
+      enrollment_year = #{enrollmentYear,jdbcType=INTEGER},
+      score = #{score,jdbcType=INTEGER},
+      experience = #{experience,jdbcType=INTEGER},
+      label = #{label,jdbcType=VARCHAR}
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+</mapper>
