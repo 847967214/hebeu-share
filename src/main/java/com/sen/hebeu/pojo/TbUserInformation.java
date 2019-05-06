@@ -3,8 +3,7 @@ package com.sen.hebeu.pojo;
 public class TbUserInformation {
     private Integer userId;
 
-    private String 
-nickName;
+    private String nickName;
 
     private Integer academyId;
 
@@ -28,16 +27,12 @@ nickName;
         this.userId = userId;
     }
 
-    public String getnickName() {
-        return 
-nickName;
+    public String getNickName() {
+        return nickName;
     }
 
-    public void setnickName(String nickName) {
-        this.
-nickName = 
-nickName == null ? null : 
-nickName.trim();
+    public void setNickName(String nickName) {
+        this.nickName = nickName == null ? null : nickName.trim();
     }
 
     public Integer getAcademyId() {

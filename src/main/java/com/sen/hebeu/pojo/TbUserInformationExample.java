@@ -164,72 +164,72 @@ public class TbUserInformationExample {
             return (Criteria) this;
         }
 
-        public Criteria andnickNameIsNull() {
+        public Criteria andNickNameIsNull() {
             addCriterion("nick_name is null");
             return (Criteria) this;
         }
 
-        public Criteria andnickNameIsNotNull() {
+        public Criteria andNickNameIsNotNull() {
             addCriterion("nick_name is not null");
             return (Criteria) this;
         }
 
-        public Criteria andnickNameEqualTo(String value) {
+        public Criteria andNickNameEqualTo(String value) {
             addCriterion("nick_name =", value, "nickName");
             return (Criteria) this;
         }
 
-        public Criteria andnickNameNotEqualTo(String value) {
+        public Criteria andNickNameNotEqualTo(String value) {
             addCriterion("nick_name <>", value, "nickName");
             return (Criteria) this;
         }
 
-        public Criteria andnickNameGreaterThan(String value) {
+        public Criteria andNickNameGreaterThan(String value) {
             addCriterion("nick_name >", value, "nickName");
             return (Criteria) this;
         }
 
-        public Criteria andnickNameGreaterThanOrEqualTo(String value) {
+        public Criteria andNickNameGreaterThanOrEqualTo(String value) {
             addCriterion("nick_name >=", value, "nickName");
             return (Criteria) this;
         }
 
-        public Criteria andnickNameLessThan(String value) {
+        public Criteria andNickNameLessThan(String value) {
             addCriterion("nick_name <", value, "nickName");
             return (Criteria) this;
         }
 
-        public Criteria andnickNameLessThanOrEqualTo(String value) {
+        public Criteria andNickNameLessThanOrEqualTo(String value) {
             addCriterion("nick_name <=", value, "nickName");
             return (Criteria) this;
         }
 
-        public Criteria andnickNameLike(String value) {
+        public Criteria andNickNameLike(String value) {
             addCriterion("nick_name like", value, "nickName");
             return (Criteria) this;
         }
 
-        public Criteria andnickNameNotLike(String value) {
+        public Criteria andNickNameNotLike(String value) {
             addCriterion("nick_name not like", value, "nickName");
             return (Criteria) this;
         }
 
-        public Criteria andnickNameIn(List<String> values) {
+        public Criteria andNickNameIn(List<String> values) {
             addCriterion("nick_name in", values, "nickName");
             return (Criteria) this;
         }
 
-        public Criteria andnickNameNotIn(List<String> values) {
+        public Criteria andNickNameNotIn(List<String> values) {
             addCriterion("nick_name not in", values, "nickName");
             return (Criteria) this;
         }
 
-        public Criteria andnickNameBetween(String value1, String value2) {
+        public Criteria andNickNameBetween(String value1, String value2) {
             addCriterion("nick_name between", value1, value2, "nickName");
             return (Criteria) this;
         }
 
-        public Criteria andnickNameNotBetween(String value1, String value2) {
+        public Criteria andNickNameNotBetween(String value1, String value2) {
             addCriterion("nick_name not between", value1, value2, "nickName");
             return (Criteria) this;
         }

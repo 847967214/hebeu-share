@@ -1,12 +1,11 @@
 package com.sen.hebeu.mapper;
 
-import com.sen.hebeu.pojo.TbUser;
-import com.sen.hebeu.pojo.TbUserExample;
 import java.util.List;
 
+import com.sen.hebeu.pojo.TbUser;
+import com.sen.hebeu.pojo.TbUserExample;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-
 
 @Mapper
 public interface TbUserMapper {

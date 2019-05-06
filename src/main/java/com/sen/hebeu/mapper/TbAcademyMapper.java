@@ -1,12 +1,11 @@
 package com.sen.hebeu.mapper;
 
-import com.sen.hebeu.pojo.TbAcademy;
-import com.sen.hebeu.pojo.TbAcademyExample;
 import java.util.List;
 
+import com.sen.hebeu.pojo.TbAcademy;
+import com.sen.hebeu.pojo.TbAcademyExample;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-
 
 @Mapper
 public interface TbAcademyMapper {

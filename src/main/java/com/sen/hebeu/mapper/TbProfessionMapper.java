@@ -1,9 +1,9 @@
 package com.sen.hebeu.mapper;
 
-import com.sen.hebeu.pojo.TbProfession;
-import com.sen.hebeu.pojo.TbProfessionExample;
 import java.util.List;
 
+import com.sen.hebeu.pojo.TbProfession;
+import com.sen.hebeu.pojo.TbProfessionExample;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

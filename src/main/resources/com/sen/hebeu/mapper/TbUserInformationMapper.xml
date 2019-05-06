@@ -3,9 +3,7 @@
 <mapper namespace="com.sen.hebeu.mapper.TbUserInformationMapper" >
   <resultMap id="BaseResultMap" type="com.sen.hebeu.pojo.TbUserInformation" >
     <id column="user_id" property="userId" jdbcType="INTEGER" />
-    <result column="
-nick_name" property="
-nickName" jdbcType="VARCHAR" />
+    <result column="nick_name" property="nickName" jdbcType="VARCHAR" />
     <result column="academy_id" property="academyId" jdbcType="INTEGER" />
     <result column="profession_id" property="professionId" jdbcType="INTEGER" />
     <result column="grade" property="grade" jdbcType="VARCHAR" />
@@ -73,8 +71,7 @@ nickName" jdbcType="VARCHAR" />
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    user_id, 
-nick_name, academy_id, profession_id, grade, enrollment_year, score, experience, 
+    user_id, nick_name, academy_id, profession_id, grade, enrollment_year, score, experience, 
     label
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.sen.hebeu.pojo.TbUserInformationExample" >
@@ -108,13 +105,11 @@ nick_name, academy_id, profession_id, grade, enrollment_year, score, experience,
     </if>
   </delete>
   <insert id="insert" parameterType="com.sen.hebeu.pojo.TbUserInformation" >
-    insert into tb_user_information (user_id, 
-nick_name, academy_id, 
+    insert into tb_user_information (user_id, nick_name, academy_id, 
       profession_id, grade, enrollment_year, 
       score, experience, label
       )
-    values (#{userId,jdbcType=INTEGER}, #{
-nickName,jdbcType=VARCHAR}, #{academyId,jdbcType=INTEGER}, 
+    values (#{userId,jdbcType=INTEGER}, #{nickName,jdbcType=VARCHAR}, #{academyId,jdbcType=INTEGER}, 
       #{professionId,jdbcType=INTEGER}, #{grade,jdbcType=VARCHAR}, #{enrollmentYear,jdbcType=INTEGER}, 
       #{score,jdbcType=INTEGER}, #{experience,jdbcType=INTEGER}, #{label,jdbcType=VARCHAR}
       )
@@ -125,10 +120,8 @@ nickName,jdbcType=VARCHAR}, #{academyId,jdbcType=INTEGER},
       <if test="userId != null" >
         user_id,
       </if>
-      <if test="
-nickName != null" >
-        
-nick_name,
+      <if test="nickName != null" >
+        nick_name,
       </if>
       <if test="academyId != null" >
         academy_id,
@@ -156,10 +149,8 @@ nick_name,
       <if test="userId != null" >
         #{userId,jdbcType=INTEGER},
       </if>
-      <if test="
-nickName != null" >
-        #{
-nickName,jdbcType=VARCHAR},
+      <if test="nickName != null" >
+        #{nickName,jdbcType=VARCHAR},
       </if>
       <if test="academyId != null" >
         #{academyId,jdbcType=INTEGER},
@@ -196,11 +187,8 @@ nickName,jdbcType=VARCHAR},
       <if test="record.userId != null" >
         user_id = #{record.userId,jdbcType=INTEGER},
       </if>
-      <if test="record.
-nickName != null" >
-        
-nick_name = #{record.
-nickName,jdbcType=VARCHAR},
+      <if test="record.nickName != null" >
+        nick_name = #{record.nickName,jdbcType=VARCHAR},
       </if>
       <if test="record.academyId != null" >
         academy_id = #{record.academyId,jdbcType=INTEGER},
@@ -231,9 +219,7 @@ nickName,jdbcType=VARCHAR},
   <update id="updateByExample" parameterType="map" >
     update tb_user_information
     set user_id = #{record.userId,jdbcType=INTEGER},
-      
-nick_name = #{record.
-nickName,jdbcType=VARCHAR},
+      nick_name = #{record.nickName,jdbcType=VARCHAR},
       academy_id = #{record.academyId,jdbcType=INTEGER},
       profession_id = #{record.professionId,jdbcType=INTEGER},
       grade = #{record.grade,jdbcType=VARCHAR},
@@ -248,11 +234,8 @@ nickName,jdbcType=VARCHAR},
   <update id="updateByPrimaryKeySelective" parameterType="com.sen.hebeu.pojo.TbUserInformation" >
     update tb_user_information
     <set >
-      <if test="
-nickName != null" >
-        
-nick_name = #{
-nickName,jdbcType=VARCHAR},
+      <if test="nickName != null" >
+        nick_name = #{nickName,jdbcType=VARCHAR},
       </if>
       <if test="academyId != null" >
         academy_id = #{academyId,jdbcType=INTEGER},
@@ -280,9 +263,7 @@ nickName,jdbcType=VARCHAR},
   </update>
   <update id="updateByPrimaryKey" parameterType="com.sen.hebeu.pojo.TbUserInformation" >
     update tb_user_information
-    set 
-nick_name = #{
-nickName,jdbcType=VARCHAR},
+    set nick_name = #{nickName,jdbcType=VARCHAR},
       academy_id = #{academyId,jdbcType=INTEGER},
       profession_id = #{professionId,jdbcType=INTEGER},
       grade = #{grade,jdbcType=VARCHAR},
